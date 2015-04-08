@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<audio controls src="tones/396.wav"></audio>396<br>
+<audio src="tones/396.wav" controls id="396"></audio>396<br>
 
 <audio src="tones/417.wav" controls></audio>417<br>
 
@@ -18,3 +18,15 @@
 <audio src="tones/852.wav" controls></audio>852<br>
 
 </body>
+<script>
+var sounds = {
+   65 : '396',
+
+
+};
+document.onkeydown = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById('396').play();
+    else alert("key not mapped : code is", e.keyCode);
+}
+</script>
