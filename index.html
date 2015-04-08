@@ -5,29 +5,40 @@
 </head>
 <body>
 
-<audio src="tones/396.wav" controls id="396"></audio>396<br>
+<audio src="tones/396.wav" id="396"></audio><p id="396text">396</p><br>
 
-<audio src="tones/417.wav" controls id="417"></audio>417<br>
+<audio src="tones/417.wav" id="417"></audio><p id="417text">417</p><br>
 
-<audio src="tones/528.wav" controls></audio>528<br>
+<audio src="tones/528.wav" id="528"></audio><p id="528text">528</p><br>
 
-<audio src="tones/639.wav" controls></audio>639<br>
+<audio src="tones/639.wav"></audio>639<br>
 
-<audio src="tones/741.wav" controls></audio>741<br>
+<audio src="tones/741.wav"></audio>741<br>
 
-<audio src="tones/852.wav" controls></audio>852<br>
+<audio src="tones/852.wav"></audio>852<br>
 
 </body>
 <script>
 var sounds = {
    49 : '396',
    50 : '417',
+   51 : '528',
+
 
 
 };
 document.onkeydown = function(e) {
     var soundId = sounds[e.keyCode];
     if (soundId) document.getElementById(soundId).play();
-    else alert("Not working, yall :(");
+    var text = document.getElementById((soundId) + "text");
+text.style.fontWeight = 'bold';
+}
+
+document.onkeyup = function(e) {
+    var soundId = sounds[e.keyCode];
+    if (soundId) document.getElementById(soundId).pause();
+    document.getElementById(soundId).load();
+    var text = document.getElementById((soundId) + "text");
+text.style.fontWeight = '';
 }
 </script>
