@@ -1,13 +1,13 @@
 
 <html>
 <head>
-  <title>Solfeggio Frequencies</title>
+  <title>Home - Tone Chart</title>
 </head>
 <body>
 
 <audio src="tones/396.wav" controls id="396"></audio>396<br>
 
-<audio src="tones/417.wav" controls></audio>417<br>
+<audio src="tones/417.wav" controls id="417"></audio>417<br>
 
 <audio src="tones/528.wav" controls></audio>528<br>
 
@@ -20,13 +20,14 @@
 </body>
 <script>
 var sounds = {
-   65 : '396',
+   49 : '396',
+   50 : '417',
 
 
 };
 document.onkeydown = function(e) {
     var soundId = sounds[e.keyCode];
-    if (soundId) document.getElementById('396').play();
-    else alert("key not mapped : code is", e.keyCode);
+    if (soundId) document.getElementById(soundId).play();
+    else alert("Not working, yall :(");
 }
 </script>
